@@ -1,20 +1,16 @@
 import React from "react";
 
-const ProductItem = () => {
+const ProductItem = ({ product }) => {
   return (
     <div className="card  bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img
-          src="https://placeimg.com/400/225/arch"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+        <img src={product.img} alt="Shoes" className="rounded-xl" />
       </figure>
       <div className="card-body ">
-        <h2 className="card-title">Shoes!</h2>
+        <h2 className="card-title">{product.name}</h2>
         <div className="flex justify-between items-center">
-          <p className="">Price: $500</p>
-          <p className="">Rating: 4</p>
+          <p className="">Price: ${product.price}</p>
+          <p className="">Rating: {product.rating}</p>
           <button className="btn btn-primary">Add to cart</button>
         </div>
       </div>

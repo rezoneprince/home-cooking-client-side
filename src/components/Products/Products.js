@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProductItem from "./ProductItem";
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/product3")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
   return (
     <div className="flex flex-col gap-5">
       <div className="">
@@ -18,12 +25,14 @@ const Products = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+        {products.map((product) => (
+          <ProductItem key={product._id} product={product} />
+        ))}
       </div>
       <div className="flex justify-center">
-        <button className="btn btn-primary">View All menus</button>
+        <Link to="/menu" className="btn btn-primary">
+          View All menus
+        </Link>
       </div>
     </div>
   );

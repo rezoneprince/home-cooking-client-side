@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import CallToAction from "../../components/Home/CallToAction/CallToAction";
 import Reviews from "../../components/Home/Reviews/Reviews";
 import Slider from "../../components/Home/Slider/Slider";
 import State from "../../components/Home/State/State";
@@ -16,6 +17,7 @@ const Home = () => {
       <State />
       <Products />
       <Reviews />
+      <CallToAction />
     </div>
   );
 };

@@ -1,0 +1,50 @@
+[
+  {
+    "img": "https://img.freepik.com/free-photo/massaman-curry-frying-pan-with-spices-cement-floor_1150-20777.jpg",
+    "name": "Messman Curry Fry",
+    "price": "500",
+    "rating": 4
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/closeup-vegetable-vegetarian-pizza-wooden-table-top-view_169016-22301.jpg",
+    "name": "Vegetable Pizza",
+    "price": "500",
+    "rating": 3
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/pakistani-food-wooden-board-view_23-2148825096.jpg",
+    "name": "Pakistani Food",
+    "price": "500",
+    "rating": 5
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion-wooden-table_2829-19631.jpg",
+    "name": "Hamburger With Juicy",
+    "price": "500",
+    "rating": 4
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/sandwich-with-chicken-burger-tomatoes-lettuce_2829-16584.jpg",
+    "name": "Sandwich With Chicken Burger",
+    "price": "500",
+    "rating": 3
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/fried-rice-with-minced-pork-tomato-carrot-cucumber-plate_1150-27179.jpg",
+    "name": "Fried Rice With Minced Pork",
+    "price": "500",
+    "rating": 4
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/tasty-pakistani-dishhigh-angle_23-2148825148.jpg",
+    "name": "Tasty pakistani Dishhigh Angle",
+    "price": "500",
+    "rating": 4
+  },
+  {
+    "img": "https://img.freepik.com/free-photo/classic-lasagna-with-bolognese-sauce_2829-11251.jpg",
+    "name": "Classic Lasagna With Bolognese Sauce",
+    "price": "500",
+    "rating": 4
+  }
+]

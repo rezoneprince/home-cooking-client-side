@@ -1,34 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import logo from "./../../assets/logo.png";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        toast.success("Successfully Logout");
+        navigate("/");
+      })
+      .catch((error) => toast.error(error.message));
+  };
   const menu = (
     <>
       <li>
-        <Link to="">All Menu</Link>
-      </li>
-      <li tabIndex={0}>
-        <Link to="" className="justify-between">
-          Pages
-          <svg
-            className="fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
-        </Link>
-        <ul className="p-2">
-          <li>
-            <Link to="">Blog</Link>
-          </li>
-        </ul>
+        <NavLink to="/menu">All Menu</NavLink>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <NavLink to="/blog">Blog</NavLink>
+      </li>
+      <li>
+        {!user?.uid ? (
+          <NavLink to="/login">Login</NavLink>
+        ) : (
+          <button onClick={handleLogout} to="">
+            Logout
+          </button>
+        )}
       </li>
     </>
   );
@@ -59,9 +61,9 @@ const Header = () => {
             {menu}
           </ul>
         </div>
-        <Link to="" className="btn btn-ghost normal-case text-xl ">
+        <NavLink to="" className="btn btn-ghost normal-case text-xl ">
           <img src={logo} alt="" className="w-full h-full" />
-        </Link>
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menu}</ul>
