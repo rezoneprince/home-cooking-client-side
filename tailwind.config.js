@@ -8,7 +8,7 @@ module.exports = {
     themes: [
       {
         homeCooking: {
-          primary: "#ffde4c",
+          primary: "#eb0029",
           secondary: "#68ff75",
           accent: "#e740ed",
           neutral: "#161722",

@@ -49,7 +49,11 @@ const Slider = () => {
       </div>
       <div className="flex justify-center w-full py-2 gap-2">
         {sliderItems.map((slider) => (
-          <a key={slider.id} href={`#item${slider.id}`} className="btn btn-xs">
+          <a
+            key={slider.id}
+            href={`#item${slider.id}`}
+            className="btn btn-xs b"
+          >
             {slider.id}
           </a>
         ))}
