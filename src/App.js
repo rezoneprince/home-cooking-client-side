@@ -5,7 +5,7 @@ import router from "./routes/Routes/router";
 
 function App() {
   return (
-    <div className="">
+    <div className="" data-theme="homeCooking">
       <div className="max-w-6xl mx-auto">
         <RouterProvider router={router}></RouterProvider>
         <Toaster />
