@@ -27,9 +27,13 @@ const Header = () => {
         {!user?.uid ? (
           <NavLink to="/login">Login</NavLink>
         ) : (
-          <button onClick={handleLogout} to="">
-            Logout
-          </button>
+          <>
+            <NavLink to="/add-product">Add Product</NavLink>
+            <NavLink to="/my-review">My Reviews</NavLink>
+            <button onClick={handleLogout} to="">
+              Logout
+            </button>
+          </>
         )}
       </li>
     </>

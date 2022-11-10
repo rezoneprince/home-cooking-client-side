@@ -5,7 +5,7 @@ import ProductItem from "./ProductItem";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product3")
+    fetch("https://home-cooking-server.vercel.app/product3")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

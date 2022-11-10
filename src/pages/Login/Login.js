@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useRef } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -10,6 +10,9 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
 
   setTitle("Login");
   const googleProvider = new GoogleAuthProvider();
@@ -22,7 +25,7 @@ const Login = () => {
       .then(() => {
         event.target.reset();
         toast.success("Successfully Login!");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };
@@ -31,7 +34,7 @@ const Login = () => {
     createUserProvider(googleProvider)
       .then(() => {
         toast.success("Successfully Login!");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };
