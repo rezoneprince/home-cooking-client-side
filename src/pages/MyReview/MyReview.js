@@ -8,7 +8,9 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-review?email=${user?.email}`)
+    fetch(
+      `https://home-cooking-server.vercel.app/my-review?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [user?.email]);
@@ -16,7 +18,7 @@ const MyReview = () => {
   const reviewDeleteHandle = (id) => {
     const proceed = window.confirm("Are you sure to delete this Product?");
     if (proceed) {
-      fetch(`http://localhost:5000/review/${id}`, {
+      fetch(`https://home-cooking-server.vercel.app/review/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

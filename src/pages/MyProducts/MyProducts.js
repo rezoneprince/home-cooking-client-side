@@ -7,7 +7,9 @@ const MyProducts = () => {
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/my-products?email=${user?.email}`)
+    fetch(
+      `https://home-cooking-server.vercel.app/my-products?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [user?.email]);
@@ -15,7 +17,7 @@ const MyProducts = () => {
   const productDeleteHandle = (id) => {
     const proceed = window.confirm("Are you sure to delete this Product?");
     if (proceed) {
-      fetch(`http://localhost:5000/product/${id}`, {
+      fetch(`https://home-cooking-server.vercel.app/product/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -30,7 +32,7 @@ const MyProducts = () => {
   };
 
   const statusUpdateHandle = (id) => {
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://home-cooking-server.vercel.app/product/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -23,13 +23,13 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://home-cooking-server.vercel.app/products"),
       },
       {
         path: "/product/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://home-cooking-server.vercel.app/product/${params.id}`),
       },
       {
         path: "/add-product",
