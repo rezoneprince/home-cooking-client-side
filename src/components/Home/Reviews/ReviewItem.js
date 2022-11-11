@@ -10,7 +10,7 @@ const ReviewItem = ({ review }) => {
           <img
             src={img ? img : <FaUserCircle />}
             alt="User Profile Pic"
-            className="rounded-xl"
+            className="rounded-xl w-20 h-w-20"
           />
         </figure>
         <div className="card-body">

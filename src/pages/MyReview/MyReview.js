@@ -8,9 +8,7 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://home-cooking-server.vercel.app/my-review?email=${user?.email}`
-    )
+    fetch(`https://home-cooking-server.vercel.app/my-review?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [user?.email]);
