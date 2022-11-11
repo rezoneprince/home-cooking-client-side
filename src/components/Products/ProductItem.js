@@ -4,7 +4,6 @@ import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
-  console.log(product);
   const { _id, img, name, body, price, rating } = product;
   return (
     <div className="card  bg-base-100 shadow-xl">

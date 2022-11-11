@@ -1,29 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
-const ReviewItem = () => {
+const ReviewItem = ({ review }) => {
+  const { userName, rating, body, img } = review;
   return (
-    <div id="review1" className="carousel-item">
+    <div id={`review${review._id}`} className="carousel-item">
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img
-            src="https://placeimg.com/80/80/arch"
-            alt="Shoes"
+            src={img ? img : <FaUserCircle />}
+            alt="User Profile Pic"
             className="rounded-xl"
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title text-center ">Name</h2>
-          <p className="text-primary">Rating: 4</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
-            optio, quasi nesciunt officiis sunt officia a nisi possimus vitae,
-            velit odit molestiae explicabo ex reiciendis. Cumque nesciunt
-            tempora repellat autem?{" "}
-            <Link className="text-primary" to="">
-              See More
-            </Link>
-          </p>
+          <h2 className="card-title text-center ">{userName}</h2>
+          <p className="text-primary">Rating: {rating}</p>
+          <p>{body.length > 50 ? body.slice(0, 100) + "..." : body}</p>
         </div>
       </div>
     </div>

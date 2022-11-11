@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
+import ReviewForm from "../../components/Products/ReviewForm";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const ProductDetails = () => {
+  const { user } = useContext(AuthContext);
   const product = useLoaderData();
   const { img, name, body, price, rating } = product;
   return (
@@ -22,6 +25,13 @@ const ProductDetails = () => {
         </div>
         <p className="">{body}</p>
       </div>
+      {user ? (
+        <ReviewForm product={product} />
+      ) : (
+        <div className="p-5">
+          <h2 className="text-center text-red-500">Please Login For Review</h2>
+        </div>
+      )}
     </div>
   );
 };

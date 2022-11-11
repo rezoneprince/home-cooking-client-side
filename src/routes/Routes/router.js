@@ -6,6 +6,7 @@ import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Menu from "../../pages/Menu/Menu";
+import MyProducts from "../../pages/MyProducts/MyProducts";
 import MyReview from "../../pages/MyReview/MyReview";
 import ProductDetails from "../../pages/ProductDetails/ProductDetails";
 import Register from "../../pages/Register/Register";
@@ -22,19 +23,27 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
-        loader: () => fetch("https://home-cooking-server.vercel.app/products"),
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/product/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`https://home-cooking-server.vercel.app/product/${params.id}`),
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/add-product",
         element: (
           <PrivateRoutes>
             <AddProduct />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/my-product",
+        element: (
+          <PrivateRoutes>
+            <MyProducts />
           </PrivateRoutes>
         ),
       },

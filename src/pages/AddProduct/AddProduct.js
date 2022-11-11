@@ -26,7 +26,8 @@ const AddProduct = () => {
       rating,
       email: user?.email,
     };
-    fetch("https://home-cooking-server.vercel.app/product", {
+
+    fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
