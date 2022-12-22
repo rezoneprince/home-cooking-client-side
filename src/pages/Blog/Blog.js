@@ -11,8 +11,8 @@ const Blog = () => {
         <div className="collapse-content">
           <ul className="pl-8">
             <li>
-              1 SQL databases are relational, NoSQL databases are
-              non-relational..
+              1. SQL databases are relational, NoSQL databases are
+              non-relational.
             </li>
             <li>
               2. SQL databases use structured query language and have a
